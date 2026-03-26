@@ -16,9 +16,10 @@ This repository serves as a template for Reproducible Science.
 
 Use this in powershell
 
-`conda env create -f environment.yml`  
-
-`conda activate research_env`  
+```
+conda env create -f environment.yml
+conda activate research_env
+```
 
 Use this in R
 
