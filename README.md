@@ -29,11 +29,13 @@ renv::restore()
 
 ---
 
-## How to run Python Tests
+## How to run R and Python Tests
 
 In the terminal / powershell
 
-`pytest scripts/test_metrics.py -v`
+```
+pytest scripts/test_metrics.py -v
+```
 
 ```
 # Run from the terminal:
