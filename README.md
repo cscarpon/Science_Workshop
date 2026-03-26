@@ -5,7 +5,10 @@
 This repository serves as a template for Reproducible Science.
 
 - Environment Control using conda or renv
+- Package management with `roxygen2` and `docstring`
 - Validation of packages using `pytest` or `testthat`
+- Object oriented programming and class structures
+- Simple `readme` styling
 
 ---
 
