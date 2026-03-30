@@ -1,6 +1,7 @@
 import pytest
 import geopandas as gpd
 import os
+from pathlib import Path
 
 # Create a test file (must start with test_)
 # File: test_metrics.py
@@ -17,11 +18,16 @@ def test_no_negative_heights():
 
 def test_load_roads_geojson():
     """Validates that the mountain roads data is present and geographically valid."""
-    # Define the path relative to the root of your repo
-    path = os.path.join("data", "mount_roads10m.geojson")
     
-    # 1. Check if the file exists (Reproducibility Check)
-    assert os.path.exists(path), f"Critical Error: {path} is missing from the repository!"
+    # 1. Get the path of THIS test file (root/scripts/test_file.py)
+    this_file = Path(__file__).resolve()
+    
+    # 2. Go up one level to the root, then into the data folder
+    root_dir = this_file.parent.parent
+    path = root_dir / "data" / "mount_roads10m.geojson"
+
+    # 3. Check if the file exists
+    assert path.exists(), f"Critical Error: {path} is missing!"
     
     # 2. Try loading the file
     gdf = gpd.read_file(path)
